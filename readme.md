@@ -1,3 +1,5 @@
+Patched powerline font for mintty on Windows: https://github.com/eugeii/consolas-powerline-vim
+
 # Dotfiles
 
 Here are my custom dotfiles with a new '[oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)' flair. Complete overhaul of the theme and zsh backend. Code changed to be more readable and less confusing. Visually, it looks very similar to my old theme, however it is much easier to now modify and build upon.
