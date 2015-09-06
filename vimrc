@@ -7,6 +7,8 @@
 set nocompatible
 let &t_Co=256
 
+let mapleader=","
+
 "-----------------------------------------------------------------------------
 "
 " Markdown Syntax
@@ -67,9 +69,6 @@ let g:ctrlp_map = '<c-p>'
 
 syntax enable
 filetype plugin indent on
-
-" Gundo mapping
-"nnoremap <silent> <C-U> :GundoToggle<CR>
 
 " Airline tabs
 let g:airline#extensions#tabline#enabled = 1
@@ -241,7 +240,7 @@ map <leader>ev :vsp <C-R>=expand("%:p:h")."/"<CR>
 map <leader>et :tabe <C-R>=expand("%:p:h")."/"<CR>
 
 " Map for omnicomplete
-inoremap <F8> <C-X><C-O>
+inoremap <F7> <C-X><C-O>
 
 " Access .vimrc with \vi
 nmap <silent> <leader>vi :e $MYVIMRC<CR>
@@ -277,53 +276,6 @@ nmap <F7> :NERDTreeToggle<CR>
 " Close the NERD Tree with Shift-F7
 nmap <S-F7> :NERDTreeClose<CR>
 
-"-----------------------------------------------------------------------------
-" Latex-Suite
-"-----------------------------------------------------------------------------
-"let g:Tex_ViewRule_pdf = '/Applications/Skim.app'
-
-" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-filetype plugin on
-"
-" " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
-" " can be called correctly.
-set shellslash
-"
-" " IMPORTANT: grep will sometimes skip displaying the file name if you
-" " search in a singe file. This will confuse Latex-Suite. Set your grep
-" " program to always generate a file-name.
-set grepprg=grep\ -nH\ $*
-"
-" " OPTIONAL: This enables automatic indentation as you type.
-filetype indent on
-"
-" " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults
-" to
-" " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" " The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
-
-"-----------------------------------------------------------------------------
-" Latex-Box
-"-----------------------------------------------------------------------------
-
-" These don't work (for me, at least)
-" Use \la instead, from ftplugin/tex.vim
-" let g:LatexBox_viewer = 'skim'
-"let g:LatexBox_latexmk_options = '-pvc'
-
-"-----------------------------------------------------------------------------
-" utl.vim
-" Plugin for handling hyperlinks
-"-----------------------------------------------------------------------------
-
-" Set how Vim opens hyperlinks
-let g:utl_cfg_hdl_scm_http_system = 'silent !open "%u"'
-
-" Open hyperlinks with \fo
-" Think "Firefox-open"
-noremap <leader>fo :Utl<CR>
-
 
 "-----------------------------------------------------------------------------
 " Syntastic
@@ -337,9 +289,13 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 
 "-----------------------------------------------------------------------------
 " JSX syntax highlighting
 "-----------------------------------------------------------------------------
 let g:jsx_ext_required = 0
+
+colorscheme solarized
+set cursorline
