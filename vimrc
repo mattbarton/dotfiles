@@ -38,25 +38,22 @@ call vundle#rc()
 " Required Bundle
 Bundle 'gmarik/vundle'
 " Additional Bundles go here"
-Bundle 'L9'
-Bundle 'Gundo'
+"Bundle 'L9'
+"Bundle 'Gundo'
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'kien/ctrlp.vim'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'scrooloose/nerdtree'
-Bundle 'hunner/vim-puppet'
-Bundle 'vim-scripts/vim-niji'
-Bundle 'vim-scripts/paredit.vim'
-Bundle 'tpope/vim-fireplace'
-" Four needed for snipmate
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
-"
+Bundle 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'kchmck/vim-coffee-script'
-" Airline
+Bundle 'pangloss/vim-javascript'
+Bundle 'einars/js-beautify'
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'helino/vim-json'
+Bundle 'mxw/vim-jsx'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/syntastic'
 " Installing plugins the first time
 " If exists, skip
 if has_vundle == 0
@@ -65,9 +62,6 @@ if has_vundle == 0
     :BundleInstall
 endif
 
-" Rainbow parens
-let g:rainbow_active = 1
-
 " Shortcuts for CtrlP
 let g:ctrlp_map = '<c-p>'
 
@@ -75,7 +69,7 @@ syntax enable
 filetype plugin indent on
 
 " Gundo mapping
-nnoremap <silent> <C-U> :GundoToggle<CR>
+"nnoremap <silent> <C-U> :GundoToggle<CR>
 
 " Airline tabs
 let g:airline#extensions#tabline#enabled = 1
@@ -329,3 +323,23 @@ let g:utl_cfg_hdl_scm_http_system = 'silent !open "%u"'
 " Open hyperlinks with \fo
 " Think "Firefox-open"
 noremap <leader>fo :Utl<CR>
+
+
+"-----------------------------------------------------------------------------
+" Syntastic
+"-----------------------------------------------------------------------------
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+"-----------------------------------------------------------------------------
+" JSX syntax highlighting
+"-----------------------------------------------------------------------------
+let g:jsx_ext_required = 0

@@ -83,23 +83,18 @@ set -e
   declare -a packages=('vim' 'git' 'tree' 'htop' 'wget' 'curl')
 
   if [[ $OSPACKMAN == "homebrew" ]]; then
-    echo "You are running homebrew."
     echo "Using Homebrew to install packages..."
     brew update
     declare -a macpackages=('findutils' 'macvim' 'the_silver_searcher')
     brew install "${packages[@]}" "${macpackages[@]}"
   elif [[ "$OSPACKMAN" == "yum" ]]; then
-    echo "You are running yum."
-    echo "Using apt-get to install packages...."
-    sudo yum update
+    echo "Using yum to install packages...."
     sudo yum install "${packages[@]}" zsh
   elif [[ "$OSPACKMAN" == "aptget" ]]; then
-    echo "You are running apt-get"
     echo "Using apt-get to install packages...."
-    sudo apt-get update
     sudo apt-get install "${packages[@]}" zsh
   else
-    echo "Could not determine OS. Exiting..."
+    echo "Could not determine package manager. Exiting..."
     exit 1
   fi
 
