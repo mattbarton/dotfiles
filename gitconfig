@@ -17,6 +17,9 @@
     remote = origin
     merge = refs/heads/master
 
+[credential]
+    helper = cache
+
 [color]
     branch = always
     diff = always
