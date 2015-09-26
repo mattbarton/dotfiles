@@ -8,7 +8,7 @@ Here are my custom dotfiles with a new '[oh-my-zsh](https://github.com/robbyruss
 
 Clone my dotfiles into a directory
 
-    $ git clone https://github.com/briancain/dotfiles ~/.dotfiles
+    $ git clone https://github.com/mattbarton/dotfiles ~/.dotfiles
 
 Then run my simple install bash script
 
