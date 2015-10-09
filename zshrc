@@ -16,22 +16,22 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="brian"
 
 # ssh
-alias datbc="ssh -t brian@briancain.net"
-alias datviper="ssh bccain@viper.cis.ksu.edu"
-alias datcg="ssh bccain@cougar.cis.ksu.edu"
-alias ksuX="ssh -X bccain@cislinux.cis.ksu.edu"
+#alias datbc="ssh -t brian@briancain.net"
+#alias datviper="ssh bccain@viper.cis.ksu.edu"
+#alias datcg="ssh bccain@cougar.cis.ksu.edu"
+#alias ksuX="ssh -X bccain@cislinux.cis.ksu.edu"
 
 # rake
-alias rake='noglob rake'
+#alias rake='noglob rake'
 
 # IRC connection
-alias goirc="ssh -t brian@www.briancain.net screen -raAd"
+#alias goirc="ssh -t brian@www.briancain.net screen -raAd"
 
 # Reload ZSH Config
 alias reload='. ~/.zshrc'
 
 # pianobar
-alias pb="pianobar"
+#alias pb="pianobar"
 
 # ls
 alias ls="ls -GF"
@@ -61,21 +61,21 @@ alias lpdf='pdflatex'
 alias lrtf='latex2rtf'
 
 # Word is for opening RTF files quickly in Microsoft Word
-alias word='open -a "Microsoft Word"'
+#alias word='open -a "Microsoft Word"'
 
 # git
-alias gl='git pull'
-alias glo='git pull origin master'
-alias gp='git push'
-alias gpo='git push origin master'
-alias gd='git diff'
-alias gc='git commit'
-alias gca='git commit -a'
-alias go='git checkout'
-alias gb='git branch'
-alias gs='git status'
-alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
-alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
+#alias gl='git pull'
+#alias glo='git pull origin master'
+#alias gp='git push'
+#alias gpo='git push origin master'
+#alias gd='git diff'
+#alias gc='git commit'
+#alias gca='git commit -a'
+#alias go='git checkout'
+#alias gb='git branch'
+#alias gs='git status'
+#alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+#alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
 # todo.txt-cli
 function t() {
@@ -88,14 +88,14 @@ function t() {
 alias n="t ls +next"
 
 # rails
-alias sc='script/console'
-alias ss='script/server'
-alias sg='script/generate'
-alias a='autotest -rails'
-alias tlog='tail -f log/development.log'
-alias scaffold='script/generate nifty_scaffold'
-alias migrate='rake db:migrate db:test:clone'
-alias rst='touch tmp/restart.txt'
+#alias sc='script/console'
+#alias ss='script/server'
+#alias sg='script/generate'
+#alias a='autotest -rails'
+#alias tlog='tail -f log/development.log'
+#alias scaffold='script/generate nifty_scaffold'
+#alias migrate='rake db:migrate db:test:clone'
+#alias rst='touch tmp/restart.txt'
 
 # commands starting with % for pasting from web
 alias %=' '
@@ -134,3 +134,6 @@ plugins=(git rvm brew)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+#
+export NVM_DIR="/home/mbarton/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
