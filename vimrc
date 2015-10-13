@@ -56,6 +56,9 @@ Bundle 'mxw/vim-jsx'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'rking/ag.vim'
+Bundle 'fatih/vim-go'
 " Installing plugins the first time
 " If exists, skip
 if has_vundle == 0
@@ -67,8 +70,6 @@ endif
 " Shortcuts for CtrlP
 let g:ctrlp_map = '<c-p>'
 
-syntax enable
-filetype plugin indent on
 
 " Airline tabs
 let g:airline#extensions#tabline#enabled = 1
@@ -102,6 +103,9 @@ set number
 " Vim window stuff
 set linebreak
 set guifont=Inconsolata:h15
+
+" http://vimdoc.sourceforge.net/htmldoc/usr_45.html
+let &termencoding = &encoding
 
 " Show tabs and trailing whitespace visually
 if (&termencoding == "utf-8") || has("gui_running")
@@ -247,7 +251,8 @@ nmap <silent> <leader>vi :e $MYVIMRC<CR>
 nmap <silent> <leader>vh :e ~/Documents/References/vim.txt<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-" Relative Number toggle (\rn) {{{
+" Relative Number toggle (\rn)
+setlocal relativenumber
 nmap <silent> <leader>rn :call RelativeNumberToggle()<CR>
 function! RelativeNumberToggle()
   if &number
@@ -261,7 +266,6 @@ function! RelativeNumberToggle()
     endif
   endif
 endfunction
-" }}}
 
 "-----------------------------------------------------------------------------
 " NERD Tree
@@ -299,3 +303,25 @@ let g:jsx_ext_required = 0
 
 colorscheme solarized
 set cursorline
+
+
+"-----------------------------------------------------------------------------
+" vim-go
+"-----------------------------------------------------------------------------
+" https://robots.thoughtbot.com/writing-go-in-vim
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+au FileType go set nolist
+nmap <leader>gt :w<CR>:GoTest<CR>
+nmap <leader>gr :w<CR>:GoRun<CR>
+
+inoremap jj <ESC>
+" http://stackoverflow.com/questions/5602767/why-is-vim-not-detecting-my-coffescript-filetype
+filetype off
+syntax enable
+filetype plugin indent on
